@@ -13,13 +13,15 @@ ps.此例子是在 ipython notebook上執行
 > - Model Checking : 最後去看自己所配適的模型是否符合本身方法的假設，
 如果不符合的話那就再回到第二步 **Specify an initial model** 去重新找模型。
 
-Step1. Import data
+以下會針對程式碼每一個部分進行比較詳細的解釋
+
+## Step1. Import data
 ```
 energy = pd.read_csv('/Users/tzeng/Desktop/data_energy.csv')
 Wt = energy.Wt.tolist()
 Energy = energy.Energy.tolist()
 ```
-將csv檔 data_energy.csv 匯入，匯入後其格式會是pandas上的dataframe格式
+第一行是將csv檔 data_energy.csv 匯入，匯入後其格式會是pandas上的dataframe格式，
 接著第二及第三行的目的是將x與y的資料由dataframe的形式轉換成list的形式，以便後面的分析及畫圖。
 
 
