@@ -78,6 +78,23 @@ Wt          |0.0434
 
 這個部分0.0434為模型中a的估計值，0.1329為模型中b的估計值。
 
+```
+# put the estimated parameters into the model
+a = 0.0434
+b = 0.1329
+energy_fit = []
+for i in Wt:
+    i = i * a + b
+    energy_fit.append(i)
+energy_fit2 = []
+```
+
+接著將估計好的值放回模型中: **y = 0.0434 * x + 0.1329**
+
+再將配適的模型畫到圖形上之前，我們先將每一個x在模型上所應該對應到的配適值y : 
+<!--- 程式中energy_fit所代表的就是根據模型每一個x所會對應到的y -->
+
+
 
 
 
