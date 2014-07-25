@@ -20,7 +20,6 @@ Wt = energy.Wt.tolist()
 Energy = energy.Energy.tolist()
 ```
 將csv檔 data_energy.csv 匯入，匯入後其格式會是pandas上的dataframe格式
-
 接著第二及第三行的目的是將x與y的資料由dataframe的形式轉換成list的形式，以便後面的分析及畫圖。
 
 
