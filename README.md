@@ -43,9 +43,22 @@ print(y_bar)
 x_bar及y_bar分別為資料中 Weights(x)及Energy requirements(y)的樣本平均數，透過for迴圈將每一項
 加起來再除上樣本個數(即為list的長度)，即為樣本平均數。
 
-<script type="text/javascript" src="https://stackedit.io/libs/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+## Step2. Specify an initial model
+```
+# first : construct the background
+fig = plt.figure()
+ax = fig.add_subplot(1,1,1)
+# second : add point into it.
+ax.scatter(Wt, Energy)
+ax.scatter(x_bar,y_bar,color='red')
+ax.set_xlabel('Weight of sheep')
+ax.set_ylabel('energy requirements')
+ax.set_title('Scatter plot between Weight and Energy requirements')
+```
+畫圖主要分成兩個部分，第一個是架構外面的框框，第二個部分是將資料丟進去描點
 
-$$
-\bar = \frac{\sum_{i=0}^\n x_i}{n}
-$$
+![Alt text](/Users/tzeng/Desktop/plot.png)
+
+
+
 
