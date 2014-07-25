@@ -43,6 +43,8 @@ print(y_bar)
 x_bar及y_bar分別為資料中 Weights(x)及Energy requirements(y)的樣本平均數，透過for迴圈將每一項
 加起來再除上樣本個數(即為list的長度)，即為樣本平均數。
 
+<script type="text/javascript" src="https://stackedit.io/libs/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+
 $$
 \bar = \frac{\sum_{i=0}^\n x_i}{n}
 $$
