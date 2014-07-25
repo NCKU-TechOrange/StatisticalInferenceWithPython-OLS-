@@ -92,7 +92,54 @@ energy_fit2 = []
 接著將估計好的值放回模型中: **y = 0.0434 * x + 0.1329**
 
 再將配適的模型畫到圖形上之前，我們先將每一個x在模型上所應該對應到的配適值y : 
-<!--- 程式中energy_fit所代表的就是根據模型每一個x所會對應到的y -->
+**程式中energy_fit所代表的就是根據模型每一個x所會對應到的y**
+
+```
+# put the fitted line into the plot
+# first : construct the background
+fig = plt.figure()
+ax = fig.add_subplot(1,1,1)
+# second : add point into it.
+ax.scatter(Wt, Energy)
+ax.plot(Wt,energy_fit,color='green')
+ax.scatter(x_bar,y_bar,color='red')
+ax.set_xlabel('Weight of sheep')
+ax.set_ylabel('energy requirements')
+ax.set_title('Scatter plot between Weight and Energy requirements')
+```
+
+接著此步驟為將模型畫上去上面的資料散布圖，因此這個畫圖的程式碼只是比上面那個畫圖的多了一行:**ax.plot(Wt,energy_fit,color='green')**，目的是透過這個圖形可以透過觀察的方式先去看我們的模型與實際上資料的契合度。
+一個配適的好的模型，由圖形上會看得出來其模型的變動大致描述了大部分的資料。
+
+**不過這一切都還是感官的感覺，實際上在統計上會進一步作model checking來看模型到底配適的好不好。**
+
+## step4. Model Checking
+
+model checking的部份，針對模型的一些基本假設進行檢定。在模型: **yi = a * xi + b + ei**中ei代表每個觀察值的殘差，其中ei有幾個簡單的性質:
+
+> - ei~N(0,1) **殘差符合平均數為零標準差為一的常態分配**
+> - ei的期望值=0 **E(ei) = 0**
+
+在樣本中，我們用樣本的殘差去看常態性，以及同質性以及線性的關係。（常態性我還不會做XD）
+**殘差代表的就是圖形中一個x所對應到的模型配適y和實際觀察值y的差距**
+
+```
+#residual
+res = []
+for i in range(len(Energy)):
+    res.append(Energy[i]-energy_fit[i])
+res
+#residual plot
+fig = plt.figure() 
+ax = fig.add_subplot(1,1,1)
+ax.scatter(energy_fit, res)
+```
+我們畫residual plot **(fitted value vs. residuals)**來看其殘差分布隨著配適值改變而變動的狀況。
+如果隨著配適值的改變，其殘差有著特定的方向改變，則代表此資料不符合線性的模型。
+另外若殘差的分布是均勻的，也代表著資料本身具有同質性
+
+**簡單來說殘差圖如果資料看起來愈散佈，不特別往哪個部分集中，或是長得有特定形狀的樣子，那就是愈好。**
+
 
 
 
