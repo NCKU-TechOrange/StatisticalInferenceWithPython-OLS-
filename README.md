@@ -55,9 +55,13 @@ ax.set_xlabel('Weight of sheep')
 ax.set_ylabel('energy requirements')
 ax.set_title('Scatter plot between Weight and Energy requirements')
 ```
-畫圖主要分成兩個部分，第一個是架構外面的框框，第二個部分是將資料丟進去描點
+畫圖主要分成兩個部分，第一個是架構外面的框框，第二個部分是將資料丟進去描點。
 
-![Alt text](/Users/tzeng/Desktop/plot.png)
+透過圖形可以看出隨著weights變大 energy requirements有變大的趨勢，因此我們用簡單線性模型來當我們的初步模型，也就是：
+** y = a * x + b **
+
+
+
 
 
 
