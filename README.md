@@ -58,10 +58,25 @@ ax.set_title('Scatter plot between Weight and Energy requirements')
 畫圖主要分成兩個部分，第一個是架構外面的框框，第二個部分是將資料丟進去描點。
 
 透過圖形可以看出隨著weights變大 energy requirements有變大的趨勢，因此我們用簡單線性模型來當我們的初步模型，也就是：
-** y = a * x + b **
+**y = a * x + b**
 
+完成初步模型的假設之後，接著我們嘗試用ordinal least square (OLS)的迴歸分析下去預估**a**和**b**
 
+## Step3. Estimation for unknown parameters
+```
+# run an OLS regression analysis
+result = sm.ols(formula='Energy ~ Wt', data=energy)
+fitted = result.fit()
+print (fitted.summary())
+```
+執行完上述的程式後，會有一整個看起來很複雜的表格，不過實際上在看 estimasted parameters只要看下面那個表格關係：
 
+            |coef.
+------------|-------
+Intercept   |0.1329
+Wt          |0.0434
+
+這個部分0.0434為模型中a的估計值，0.1329為模型中b的估計值。
 
 
 
